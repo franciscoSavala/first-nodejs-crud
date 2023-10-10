@@ -24,5 +24,9 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.products = require("./product.js")(sequelize, Sequelize);
+db.manufacturers = require("./manufacturer.js")(sequelize, Sequelize);
+
+//crear relaciones
+require("./relations.js")(sequelize, Sequelize);
 
 module.exports = db;

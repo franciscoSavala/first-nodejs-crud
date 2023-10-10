@@ -1,6 +1,7 @@
+
 module.exports = (sequelize, Sequelize) => {
-    const Product = sequelize.define('products', { 
-        codigo: {
+    const Manufacturer = sequelize.define('manufacturers', {
+        id: {
             type: Sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true,
@@ -10,13 +11,13 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: false
         },
-        price: {
-            type: Sequelize.DOUBLE,
+        country: {
+            type: Sequelize.STRING,
             allowNull: false
         }
     });
-    return Product;
-}
+    Manufacturer.hasMany(sequelize.models.products, {foreignKey: 'manufacturer_id'});
+
+    return Manufacturer;
     
-
-
+}

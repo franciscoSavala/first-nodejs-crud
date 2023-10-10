@@ -6,6 +6,7 @@
     "tedious": "^16.4.0"
   },
   "scripts": {
-    "serve" : "nodemon index.js"
+    "serve" : "nodemon index.js",
+    "debug" : "nodemon --inspect index.js"
   }
 }

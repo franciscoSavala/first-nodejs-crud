@@ -15,6 +15,23 @@ exports.createProduct = async (product_req) => {
 }
 
 
+exports.updateProduct = async (id, product_req) => {
+    const product = await repository.updateProduct(id, product_req);
+    //some more logic
+    return product;
+}
+
+exports.deleteProduct = async (id) => {
+    const product = await repository.deleteProduct(id);
+    //some more logic
+    return product;
+}
+
+exports.getAllProductsPaginated = async (limit, page) => {
+    const products = await repository.getAllProductsPaginated(parseInt(limit), parseInt(page));
+    //some more logic
+    return products;
+}
 
 
 

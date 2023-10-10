@@ -12,7 +12,7 @@ const db = require('./src/models');
 
 (async () => {
     try{
-        await db.sequelize.sync();
+        await db.sequelize.sync({force: true});
         console.log("Synced db.");
     }
     catch{
